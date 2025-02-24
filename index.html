@@ -2,91 +2,88 @@
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
-    <title>Danske Superliga</title>
-    <!-- Tailwind CSS via CDN -->
+    <title>Responsiv Superliga Tabel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-100">
     <div class="max-w-5xl mx-auto p-4">
       <h1 class="text-3xl font-bold text-center mb-6">Danske Superliga</h1>
 
-      <!-- Container til dagens/næste kamp -->
-      <div id="nextMatchContainer" class="bg-white shadow rounded-lg p-6 mb-6">
-        <h2 class="text-xl font-bold text-center mb-4">
-          Dagens Kamp / Næste Kamp
-        </h2>
-        <div id="matchInfo" class="text-sm text-gray-700 text-center">
-          Indlæser...
-        </div>
-      </div>
-
-      <!-- Container til stillinger -->
       <div class="overflow-x-auto bg-white shadow rounded-lg p-4">
-        <table class="min-w-full divide-y divide-gray-200">
+        <table class="min-w-full divide-y divide-gray-200 text-sm">
           <thead class="bg-gray-50">
             <tr>
-              <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
-              >
+              <th class="px-2 py-2 text-center font-medium text-gray-700 w-12">
                 Plads
               </th>
-              <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
-              >
+              <th class="px-2 py-2 text-left font-medium text-gray-700">
                 Hold
               </th>
+              <th class="px-2 py-2 text-center font-medium text-gray-700">P</th>
               <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
+                class="px-2 py-2 text-center font-medium text-gray-700 hidden sm:table-cell"
               >
                 Kampe
               </th>
               <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
+                class="px-2 py-2 text-center font-medium text-gray-700 hidden sm:table-cell"
               >
                 Sejre
               </th>
               <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
+                class="px-2 py-2 text-center font-medium text-gray-700 hidden sm:table-cell"
               >
                 Uafgjorte
               </th>
               <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
+                class="px-2 py-2 text-center font-medium text-gray-700 hidden md:table-cell"
               >
                 Nederlag
               </th>
               <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
+                class="px-2 py-2 text-center font-medium text-gray-700 hidden md:table-cell"
               >
                 Mål For
               </th>
               <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
+                class="px-2 py-2 text-center font-medium text-gray-700 hidden lg:table-cell"
               >
                 Mål Imod
               </th>
               <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
+                class="px-2 py-2 text-center font-medium text-gray-700 hidden lg:table-cell"
               >
-                Målforskel
-              </th>
-              <th
-                class="px-4 py-2 text-center text-sm font-medium text-gray-700"
-              >
-                Point
+                Diff
               </th>
             </tr>
           </thead>
-          <tbody id="standingsTable" class="divide-y divide-gray-200 text-sm">
-            <!-- Dynamisk data indsættes her -->
+          <tbody id="standingsTable" class="divide-y divide-gray-200">
+            <!-- Eksempel på en række -->
+            <tr>
+              <td class="px-2 py-2 text-center">1</td>
+              <td class="px-2 py-2 text-left flex items-center space-x-2">
+                <img
+                  src="https://www.fck.dk/sites/default/files/FCK_Logo.png"
+                  alt="FC København logo"
+                  class="h-8 w-8 object-contain"
+                />
+                <span>FC København</span>
+              </td>
+              <td class="px-2 py-2 text-center">39</td>
+              <td class="px-2 py-2 text-center hidden sm:table-cell">19</td>
+              <td class="px-2 py-2 text-center hidden sm:table-cell">11</td>
+              <td class="px-2 py-2 text-center hidden sm:table-cell">6</td>
+              <td class="px-2 py-2 text-center hidden md:table-cell">2</td>
+              <td class="px-2 py-2 text-center hidden md:table-cell">35</td>
+              <td class="px-2 py-2 text-center hidden lg:table-cell">20</td>
+              <td class="px-2 py-2 text-center hidden lg:table-cell">+15</td>
+            </tr>
+            <!-- Tilføj flere rækker dynamisk -->
           </tbody>
         </table>
       </div>
-
-      <!-- Timestamp for sidste opdatering -->
-      <div id="timestamp" class="mt-4 text-center text-sm text-gray-600"></div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
